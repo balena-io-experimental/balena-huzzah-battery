@@ -68,6 +68,12 @@ static const unsigned char PROGMEM logobig[] =
   B00000000, B00000001, B10000000, B00000000,
   B00000000, B00000000, B00000000, B00000000 };
 
+void display_logo();
+void display_batt();
+long battery_level();
+void btn_batt();
+void btn_logo();
+
 
 // true when displaying the battery status
 bool show_batt = true;
