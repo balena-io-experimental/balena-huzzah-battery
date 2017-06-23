@@ -10,7 +10,7 @@
 #define BUTTON_C 2
 
 Resin resin;
-const char* applicationUUID = "1234567890";
+const char* applicationUUID = "424605";
 const char* ssid = "resin-hotspot";
 const char* password = "resin-hotspot";
 
