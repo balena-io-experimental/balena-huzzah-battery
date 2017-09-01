@@ -10,9 +10,11 @@
 #define BUTTON_C 2
 
 Resin resin;
-const char* applicationUUID = "424605";
-const char* ssid = "resin-hotspot";
-const char* password = "resin-hotspot";
+String applicationUUID = "424605";
+String deviceType = "ESP8266";
+String split = "_";
+String ssid = "resin-hotspot";
+String password = "resin-hotspot";
 
 Adafruit_SSD1306 display = Adafruit_SSD1306();
 
@@ -93,7 +95,7 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(BUTTON_A), btn_batt, RISING);
   attachInterrupt(digitalPinToInterrupt(BUTTON_C), btn_logo, RISING);
 
-  resin.Setup(applicationUUID, ssid, password);
+  resin.Setup(deviceType, applicationUUID, split, ssid, password, false);
 
   // Let the splash screen linger for a bit...
   delay(1000);
@@ -105,6 +107,8 @@ void loop(void) {
 
   if (show_batt)
     display_batt();
+
+  resin.Loop();
 
   delay(1000);
 }
